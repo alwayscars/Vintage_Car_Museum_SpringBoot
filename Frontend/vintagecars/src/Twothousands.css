@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #1a1a1a;
+  --color-bg-card: #252525;
+  --color-primary: #a8a8a8;
+  --color-primary-light: #d4d4d4;
+  --color-text: #e5e5e5;
+  --color-text-muted: #888888;
+  --color-border: #3a3a3a;
+  --color-input-bg: #1f1f1f;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Raleway', sans-serif;
+}
+
+/* Fifties Container */
+.fifties-container {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+/* Background Pattern */
+.fifties-container .background-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(circle at 2px 2px, var(--color-primary) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Chrome Lines */
+.fifties-container .chrome-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(168, 168, 168, 0.3), transparent);
+}
+
+.fifties-container .chrome-line.top {
+  top: 0;
+}
+
+.fifties-container .chrome-line.bottom {
+  bottom: 0;
+}
+
+/* Top Navigation */
+.fifties-container .top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: rgba(26, 26, 26, 0.95);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.fifties-container .welcome-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
+.fifties-container .logout-button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #707070 0%, #505050 50%, #606060 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.fifties-container .logout-button:hover {
+  background: linear-gradient(135deg, #808080 0%, #606060 50%, #707070 100%);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Fifties Wrapper */
+.fifties-wrapper {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Section */
+.fifties-container .header-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.fifties-container .main-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #a0a0a0 50%, #d0d0d0 75%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fifties-container .subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Back Button */
+.back-button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* Fifties Card */
+.fifties-card {
+  width: 100%;
+  background: linear-gradient(145deg, rgba(45, 45, 45, 0.9) 0%, rgba(35, 35, 35, 0.95) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.fifties-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+/* Divider */
+.fifties-card .divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  margin: 24px 0;
+}
+
+/* Loading, Error, Empty States */
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.error-state {
+  color: #e57373;
+}
+
+/* Cars Grid */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Car Card */
+.car-card {
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: fit-content;         /* 👈 new */
+  height: fit-content;        /* 👈 new */
+  padding: 0;                 /* 👈 reduce padding */
+  margin: auto;               /* 👈 center card */
+}
+
+
+.car-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Car Image Container */
+.car-image-container {
+  width: 100%;
+  height: auto;               /* 👈 no fixed height */
+  background: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.car-image {
+  width: 300px;               /* 👈 adjust size here */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+
+.car-card:hover .car-image {
+  transform: scale(1.05);
+}
+
+/* Car Info */
+.car-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.car-model {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.car-brand {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Footer */
+.fifties-container .footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 24px;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .car-image-container {
+    height: 120px;
+  }
+
+  .fifties-container .main-title {
+    font-size: 2rem;
+  }
+}
